@@ -69,6 +69,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/QuickRemote/etc/init.d/10QuickRemote:system/etc/init.d/10QuickRemote \
     $(LOCAL_PATH)/QuickRemote/media/audio/ui/IR_normal.ogg:system/media/audio/ui/IR_normal.ogg
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    HammerheadDoze
+
 # Get BCMDHD configs
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 
