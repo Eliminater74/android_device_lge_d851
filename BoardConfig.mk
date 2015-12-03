@@ -25,7 +25,21 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/d851/bluetooth
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_d851_defconfig
+TARGET_KERNEL_CONFIG := d851_defconfig
+
+# Kernel & ToolChains
+#TARGET_KERNEL_CONFIG := cyanogenmod_d851_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-6.0
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-4.9/bin/arm-eabi-
+# Rom ToolChains
+TARGET_ROM_CUSTOM_TOOLCHAIN := arm-linux-androideabi-4.9
+#TARGET_GCC_VERSION := 4.8
+#TARGET_TOOLS_PREFIX := prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8/bin/arm-linux-androideabi-
+# RR Config Flags
+TARGET_TC_ROM := 4.9
+TARGET_TC_KERNEL := 6.0
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
