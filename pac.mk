@@ -3,12 +3,19 @@ PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 $(call inherit-product, device/lge/d851/full_d851.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/pac/config/common_full_phone.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+$(call inherit-product, vendor/pac/config/nfc_enhanced.mk)
 
-PRODUCT_NAME := cm_d851
+PRODUCT_DEVICE := d851
+PRODUCT_NAME := pac_d851
+PRODUCT_BRAND := lge
+PRODUCT_MODEL := LG-D851
+PRODUCT_MANUFACTURER := LGE
+
+# Bootanimation
+PAC_BOOTANIMATION_NAME := 1440
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \
