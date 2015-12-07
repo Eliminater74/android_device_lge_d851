@@ -2,20 +2,22 @@ PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 $(call inherit-product, device/lge/d851/full_d851.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/pac/config/common_full_phone.mk)
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/pac/config/nfc_enhanced.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
+
+
 
 PRODUCT_DEVICE := d851
-PRODUCT_NAME := pac_d851
+PRODUCT_NAME := omni_d851
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-D851
 PRODUCT_MANUFACTURER := LGE
 
-# Bootanimation
-PAC_BOOTANIMATION_NAME := 1440
+# must be before including omni part
+TARGET_BOOTANIMATION_SIZE := 1440x2560
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \
