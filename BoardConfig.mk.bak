@@ -24,9 +24,9 @@ BOARD_BLUEDROID_VENDOR_CONF := device/lge/d851/bluetooth/vnd_g3.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/d851/bluetooth
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-
+<<<<<<< HEAD
 TARGET_PREBUILT_RECOVERY := device/lge/d851/misc/recovery.img
-
+=======
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),user)
@@ -37,6 +37,7 @@ ifeq ($(HOST_OS),linux)
 endif
 DONT_DEXPREOPT_PREBUILTS := true
 
+>>>>>>> bcb8e74... Enable dex-preoptimization
 # Kernel
 #TARGET_KERNEL_CONFIG := cyanogenmod_d851_defconfig
 TARGET_KERNEL_CONFIG := d851_defconfig
