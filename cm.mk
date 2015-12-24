@@ -8,6 +8,9 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
+# Custom unofficial build tag
+TARGET_UNOFFICIAL_BUILD_ID := temasek
+
 PRODUCT_NAME := cm_d851
 
 PRODUCT_BUILD_PROP_OVERRIDES += \

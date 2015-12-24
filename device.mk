@@ -39,8 +39,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     OmniSwitch \
     OmniGears \
-    OTAUpdates \
     FloatingActionButton
+    
 # Wifi
 PRODUCT_PACKAGES += \
     libnetcmdiface

@@ -21,7 +21,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.util.Log;
 
-public class AccelSensor extends g3Sensor {
+public class AccelSensor extends G3Sensor {
 
     private static final boolean DEBUG = false;
     private static final String TAG = "AccelSensor";

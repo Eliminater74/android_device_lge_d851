@@ -30,7 +30,7 @@ import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.util.Log;
 
-public abstract class G3headSensor {
+public abstract class G3Sensor {
 
     private static final String TAG = "G3Sensor";
 
@@ -48,7 +48,7 @@ public abstract class G3headSensor {
 
     private WakeLock mSensorWakeLock;
 
-    public G3headSensor(Context context, int type) {
+    public G3Sensor(Context context, int type) {
         mContext = context;
         mType = type;
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
