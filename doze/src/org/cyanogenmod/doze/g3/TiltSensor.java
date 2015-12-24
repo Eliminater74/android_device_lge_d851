@@ -22,7 +22,7 @@ import android.hardware.SensorEvent;
 import android.os.SystemClock;
 import android.util.Log;
 
-public class TiltSensor extends G3headSensor {
+public class TiltSensor extends G3Sensor {
 
     private static final boolean DEBUG = false;
     private static final String TAG = "TiltSensor";
