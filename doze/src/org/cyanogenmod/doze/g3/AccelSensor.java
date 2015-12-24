@@ -14,33 +14,28 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.doze.hammerhead;
+package org.cyanogenmod.doze.g3;
 
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
-import android.os.SystemClock;
 import android.util.Log;
 
-public class TiltSensor extends HammerheadSensor {
+public class AccelSensor extends g3Sensor {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "TiltSensor";
+    private static final String TAG = "AccelSensor";
 
-    private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int ACCELERATION_FORCE_Y_MIN = 5;
 
-    private long mEntryTimestamp;
-    private AccelSensor mAccelSensor;
-
-    public TiltSensor(Context context) {
-        super(context, Sensor.TYPE_TILT_DETECTOR);
+    public AccelSensor(Context context) {
+        super(context, Sensor.TYPE_ACCELEROMETER);
     }
 
     @Override
     public void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
         super.enable();
-        mEntryTimestamp = SystemClock.elapsedRealtime();
     }
 
     @Override
@@ -51,18 +46,12 @@ public class TiltSensor extends HammerheadSensor {
 
     @Override
     protected void onSensorEvent(SensorEvent event) {
-        if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
+        if (DEBUG) Log.d(TAG, "Got sensor event: y = " + event.values[1]);
 
-        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-        if (delta < MIN_PULSE_INTERVAL_MS) {
-            return;
-        } else {
-            mEntryTimestamp = SystemClock.elapsedRealtime();
+        if (event.values[1] > ACCELERATION_FORCE_Y_MIN) {
+            launchDozePulse();
         }
 
-        if (event.values[0] == 1) {
-            mAccelSensor = new AccelSensor(mContext);
-            mAccelSensor.enable();
-        }
+	disable();
     }
 }

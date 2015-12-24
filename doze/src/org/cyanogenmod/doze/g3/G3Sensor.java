@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.doze.hammerhead;
+package org.cyanogenmod.doze.g3;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -30,9 +30,9 @@ import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.util.Log;
 
-public abstract class HammerheadSensor {
+public abstract class G3headSensor {
 
-    private static final String TAG = "HammerheadSensor";
+    private static final String TAG = "G3Sensor";
 
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
 
@@ -48,14 +48,14 @@ public abstract class HammerheadSensor {
 
     private WakeLock mSensorWakeLock;
 
-    public HammerheadSensor(Context context, int type) {
+    public G3headSensor(Context context, int type) {
         mContext = context;
         mType = type;
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(mType);
         mSensorWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-		"HammerheadSensorWakeLock");
+		"G3SensorWakeLock");
     }
 
     public void enable() {
