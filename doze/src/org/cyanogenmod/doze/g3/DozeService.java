@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.doze.hammerhead;
+package org.cyanogenmod.doze.g3;
 
 import android.app.Activity;
 import android.app.IntentService;
