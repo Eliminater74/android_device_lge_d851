@@ -1,6 +1,44 @@
 [
   {
-    "repository": "android_device_lge_g3-common",
-    "target_path": "device/lge/g3-common"
-  }
+    "remote": "github",
+    "repository": "Eliminater74/android_device_lge_g3-common",
+    "target_path": "device/lge/g3-common",
+    "revision": "cm-13.0"
+  },
+  {
+    "remote": "github",
+    "repository": "Eliminater74/NebulaKernel",
+    "target_path": "kernel/lge/g3",
+    "revision": "nebula-mm_release"
+  },
+  {
+    "remote": "cm",
+    "repository": "android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "revision": "cm-13.0"
+  },
+  {
+    "remote": "cm",
+    "repository": "android_external_stlport",
+    "target_path": "external/stlport",
+    "revision": "cm-13.0"
+  },
+  {
+    "remote": "cm",
+    "repository": "android_hardware_sony_thermanager",
+    "target_path": "hardware/sony/thermanager",
+    "revision": "cm-13.0"
+  },
+  {
+    "remote": "cm",
+    "repository": "android_external_sony_boringssl-compat",
+    "target_path": "external/sony/boringssl-compat",
+    "revision": "cm-13.0"
+  },
+  { 
+    "remote": "github",
+    "repository": "aclegg2011/proprietary_vendor_lge",
+    "target_path": "vendor/lge",
+    "revision": "cm-13.0"
+ }
 ]
